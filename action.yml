@@ -1,0 +1,16 @@
+name: Run ESLint
+description: Run ESLint on changed lines of a pull request
+author: stefanoeb
+inputs:
+  files:
+    description: Blob of files to lint
+    required: false
+    default: '.'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.files }}
+branding:
+  icon: circle
+  color: purple
